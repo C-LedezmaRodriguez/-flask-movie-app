@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este es un proyecto base en Python con Flask para MovieApp .
+Este es el proyecto base en Python con Flask para MovieApp.
 
 ## Requerimientos
 
@@ -14,4 +14,3 @@ Este es un proyecto base en Python con Flask para MovieApp .
 1. Clonar el repositorio:
 
    git clone https://github.com/tu-usuario/FlaskMovieApp
-   cd FlaskMovieApp
