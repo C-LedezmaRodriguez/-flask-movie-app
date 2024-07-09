@@ -11,9 +11,11 @@ Este es el proyecto base en Python con Flask para MovieApp.
 
 ## Instalación
 
-Clonar el repositorio:
+- Clonar el repositorio:
+
    git clone https://github.com/tu-usuario/FlaskMovieApp
 
-Crear un entorno virtual:
+- Crear un entorno virtual:
+
 python3 -m venv venv
-source venv/bin/activate  # En Windows, usa `venv\Scripts\activate`
+source venv/bin/activate
