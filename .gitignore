@@ -1,0 +1,22 @@
+# Ignorar el archivo .env para mantener las variables de entorno seguras
+.env
+
+# Ignorar archivos de base de datos locales
+*.db
+*.sqlite
+
+# Ignorar directorios de caché y bytecode de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar archivos y directorios específicos de IDEs
+.vscode/
+.idea/
+
+# Ignorar el directorio de entornos virtuales
+venv/
+.env/
+
+# Ignorar archivos de dependencias del entorno virtual
+*.egg-info/
