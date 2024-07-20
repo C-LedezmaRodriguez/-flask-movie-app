@@ -5,14 +5,15 @@ from .models import Movie
 bp = Blueprint('main', __name__)
 
 @bp.route('/movies')
+
 def movies():
+    """Ruta para obtener una lista de películas"""
     api_key = current_app.config['TMDB_API_KEY']
     url = f'https://api.themoviedb.org/3/movie/popular?api_key={api_key}&language=en-US&page=1'
     response = requests.get(url, timeout=10)
     data = response.json()
     movies_data = data.get('results', [])
 
-    # Usar el modelo para transformar los datos
     movies_list = [Movie(
         id=m['id'],
         title=m['title'],
@@ -22,17 +23,16 @@ def movies():
         vote_average=m['vote_average']
     ) for m in movies_data]
 
-    # Convertir los objetos Movie a diccionarios para enviar como JSON
     return jsonify([movie.to_dict() for movie in movies_list])
 
 @bp.route('/movies/<int:id>')
 def movie_detail(id):
+    """Ruta para obtener los detalles de una película específica"""
     api_key = current_app.config['TMDB_API_KEY']
     url = f'https://api.themoviedb.org/3/movie/{id}?api_key={api_key}&language=en-US'
     response = requests.get(url, timeout=10)
     movie_detail_data = response.json()
 
-    # Usar el modelo para transformar los datos
     movie = Movie(
         id=movie_detail_data['id'],
         title=movie_detail_data['title'],
@@ -43,4 +43,3 @@ def movie_detail(id):
     )
 
     return jsonify(movie.to_dict())
-
